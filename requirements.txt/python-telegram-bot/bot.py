@@ -3,7 +3,7 @@ import os
 from telegram import Update
 from telegram.ext import ApplicationBuilder, MessageHandler, filters, ContextTypes
 
-TOKEN = "8774297321:AAFBa1Y_dhyR-_OKtvmKwwAsB8gMGeOSvLU"
+TOKEN = os.environ.get("8774297321:AAG6LjAzrHbADTYMjACbHjKHKbcLUkInok0")
 
 async def download(update: Update, context: ContextTypes.DEFAULT_TYPE):
     url = update.message.text
@@ -27,7 +27,6 @@ async def download(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     except Exception as e:
         await update.message.reply_text(f"❌ Ошибка: {e}")
-
 
 app = ApplicationBuilder().token(TOKEN).build()
 
